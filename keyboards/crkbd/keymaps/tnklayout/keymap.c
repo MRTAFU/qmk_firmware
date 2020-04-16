@@ -213,8 +213,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST);
 
         if (lower_pressed) { // LOWER キーを離した時に lower_pressed がリセットされていない時だけ「無変換」キーを入力する
-          register_code(KC_LANG1); // macOS の場合は KC_LANG1, winOS の場合は KC_HEN
-          unregister_code(KC_LANG1);
+          register_code(KC_LANG2); // macOS の場合は KC_LANG2, winOS の場合は KC_MHEN
+          unregister_code(KC_LANG2);
         }
         lower_pressed = false; // return false; と書く（LOWER キーについて、以降の QMK 本体側での処理を行わないことを示す）
       }
@@ -231,8 +231,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST);
 
         if (raise_pressed) {
-          register_code(KC_LANG2); // macOS の場合は KC_LANG2, winOS の場合は KC_MHEN
-          unregister_code(KC_LANG2);
+          register_code(KC_LANG1); // macOS の場合は KC_LANG1, winOS の場合は KC_HEN
+          unregister_code(KC_LANG1);
         }
         raise_pressed = false;
       }
